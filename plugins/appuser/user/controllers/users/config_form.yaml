@@ -1,0 +1,37 @@
+title: user form
+form:
+    fields:
+        username:
+            label: 'Username'
+            searchable: true
+            sortable: true
+
+        password:
+            label: 'Password'
+            type: password
+            span: right
+
+        token:
+            label: 'Token'
+            type: text
+            readOnly: true
+            span: right
+
+        created_at:
+            label: 'Created At'
+            type: datetime
+            sortable: true
+
+        updated_at:
+            label: 'Updated At'
+            type: datetime
+            sortable: true
+
+        is_admin:
+            label: 'Is Admin'
+            type: switch
+            sortable: true
+
+    toolbarButtons: save
+
+modelClass: AppUser\User\Models\User

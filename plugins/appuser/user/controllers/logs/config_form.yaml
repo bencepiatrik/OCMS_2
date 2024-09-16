@@ -1,0 +1,29 @@
+title: 'Log Form'
+
+modelClass: AppUser\User\Models\Log
+
+form:
+    fields:
+        user_id:
+            label: 'User ID'
+            type: text
+            readOnly: true
+            span: left
+
+        action:
+            label: 'Action'
+            type: text
+            readOnly: true
+            span: left
+
+        created_at:
+            label: 'Created At'
+            type: datetime
+            readOnly: true
+            span: left
+
+        updated_at:
+            label: 'Updated At'
+            type: datetime
+            readOnly: true
+            span: right
