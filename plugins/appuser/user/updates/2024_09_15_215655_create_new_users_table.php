@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('new_users');
+        Schema::dropIfExists('new_users'); // REVIEW - tu som si len všimol že ti nesedí 'new_users'
     }
 };

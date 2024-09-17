@@ -5,6 +5,7 @@ namespace AppUser\User\Middleware;
 use Closure;
 use AppUser\User\Services\AuthService;
 
+// REVIEW - prečo existuje tento middleware? Robí to isté čo AuthMiddleware
 class GuestMiddleware
 {
     public function handle($request, Closure $next)

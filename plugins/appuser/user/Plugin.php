@@ -37,9 +37,9 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-        include __DIR__ . '/routes.php';
+        include __DIR__ . '/routes.php'; // REVIEW - Toto by sa malo diať automaticky myslím, teda routes.php by ti mali fungovať automaticky ak ich máš správne pomenované a na správnom mieste
 
-        /*
+        /* REVIEW - Tu vidím že si našiel aj tento spôsob používania middleware, je to fajn niekedy to pravdepodobne použiješ alebo sa s tým stretneš
                 $this->app['Illuminate\Contracts\Http\Kernel']
                     ->pushMiddleware(\AppUser\User\Middleware\AuthMiddleware::class);
 
@@ -51,7 +51,7 @@ class Plugin extends PluginBase
     /**
      * registerComponents used by the frontend.
      */
-    public function registerComponents()
+    public function registerComponents() // REVIEW - Tu registruješ componenty ktoré nikde neexistujú, teda aspoň nie pod namespace 'AppUser\User\Components\Login'... každopádne nepotrebuješ componenty
     {
         return [
             'AppUser\User\Components\Login' => 'loginForm',
@@ -62,7 +62,7 @@ class Plugin extends PluginBase
     /**
      * registerPermissions used by the backend.
      */
-    public function registerPermissions()
+    public function registerPermissions() // REVIEW - Permissions nemusíš riešiť. Sú v OctoberCMS kebyže to developer potrebuje, ale zo skúsenosti ak už sa riešia permissions tak sa to robí custom
     {
         return [
             'appuser.user.manage_users' => [

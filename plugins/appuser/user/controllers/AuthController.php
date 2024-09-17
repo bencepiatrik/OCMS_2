@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use AppUser\User\Models\Log;
 
+/* REVIEW - OctoberCMS Controller a tvoj custom HTTP Controller (tento) sú 2 rozdielne veci, aj keď sa volá v podstate tak isto
+OctoberCMS Controlleri sa používaju na admin panel / admin area, HTTP controlleri používaš ty keď robíš funkcionalitu pre svoje routes
+Tieto HTTP controlleri ukladaj do appuser/user/http/controllers */
 class AuthController extends Controller
 {
     public function register(Request $request)

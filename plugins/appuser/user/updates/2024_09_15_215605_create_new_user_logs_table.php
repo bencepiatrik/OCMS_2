@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('appuser_user_logs', function (Blueprint $table) {
             $table->increments('id');
+            /* REVIEW - Tu mám len taký recommendation
+            môžeš použiť ->foreignIdFor(User::class), je to spôsob ktorý je čistejší a nebudeš to musieť definovať ručne ako to robíš nižšie */
             $table->unsignedInteger('user_id');
             $table->string('action');
             $table->timestamps();
@@ -30,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('new_user_logs');
+        Schema::dropIfExists('new_user_logs'); // REVIEW - tu som si len všimol že ti nesedí 'new_user_logs'
     }
 };

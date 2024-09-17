@@ -17,6 +17,7 @@ class Log extends Model
 
     public function user(): \October\Rain\Database\Relations\BelongsTo
     {
+        // REVIEW - Relation by ti mal fungovať aj bez tohto, stačí $belongsTo ktoré máš vyššie. Pravdepodobne túto funkciu za teba volá OctoberCMS keď zadefinuješ $belongsTo
         return $this->belongsTo(User::class, 'user_id');
     }
 }
