@@ -1,17 +1,19 @@
-<?php
+<?php namespace AppUser\User\Http;
 
-namespace AppUser\User\Controllers;
 
+use AppUser\User\Models\Logs;
+use AppUser\User\Models\Users;
 use Backend\Classes\Controller;
 use Illuminate\Http\Request;
-use AppUser\User\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
-use AppUser\User\Models\Log;
+use \October\Rain\Database\Traits\Hashable;
 
 /* REVIEW - OctoberCMS Controller a tvoj custom HTTP Controller (tento) sú 2 rozdielne veci, aj keď sa volá v podstate tak isto
 OctoberCMS Controlleri sa používaju na admin panel / admin area, HTTP controlleri používaš ty keď robíš funkcionalitu pre svoje routes
 Tieto HTTP controlleri ukladaj do appuser/user/http/controllers */
+
+// RESPONSE - Good call, zdalo sa mi, že ocms controllery budú iné. Moje som aj separoval, do /http
 class AuthController extends Controller
 {
     public function register(Request $request)
@@ -21,13 +23,13 @@ class AuthController extends Controller
             'password' => 'required|string',
         ]);
 
-        $user = new User();
+        $user = new Users();
         $user->username = $data['username'];
-        $user->password = $data['password'];
+        $user->password = Hash::make($data['password']);
         $user->token = Str::random(60);
         $user->save();
 
-        Log::create([
+        Logs::create([
             'user_id' => $user->id,
             'action' => 'User registered',
         ]);
@@ -39,9 +41,9 @@ class AuthController extends Controller
     {
         $credentials = $request->only(['username', 'password']);
 
-        $user = User::where('username', $credentials['username'])->first();
+        $user = Users::where('username', $credentials['username'])->first();
 
-        Log::create([
+        Logs::create([
             'user_id' => $user->id,
             'action' => 'User logged in',
         ]);
@@ -52,4 +54,5 @@ class AuthController extends Controller
             return response()->json(['error' => 'Invalid credentials'], 401);
         }
     }
+
 }

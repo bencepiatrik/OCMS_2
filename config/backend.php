@@ -109,7 +109,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | Use this setting to prevent concurrent sessions. When enabled, backend
-    | users cannot sign in to multiple devices at the same time. When a new
+    | users_old cannot sign in to multiple devices at the same time. When a new
     | sign in occurs, all other sessions for that user are invalidated.
     |
     */

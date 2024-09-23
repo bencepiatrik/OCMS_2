@@ -39,12 +39,9 @@ class Plugin extends PluginBase
     {
         include __DIR__ . '/routes.php'; // REVIEW - Toto by sa malo diať automaticky myslím, teda routes.php by ti mali fungovať automaticky ak ich máš správne pomenované a na správnom mieste
 
-        /* REVIEW - Tu vidím že si našiel aj tento spôsob používania middleware, je to fajn niekedy to pravdepodobne použiješ alebo sa s tým stretneš
-                $this->app['Illuminate\Contracts\Http\Kernel']
-                    ->pushMiddleware(\AppUser\User\Middleware\AuthMiddleware::class);
+        // REVIEW - Tu vidím že si našiel aj tento spôsob používania middleware, je to fajn niekedy to pravdepodobne použiješ alebo sa s tým stretneš
 
-                $this->app['Illuminate\Contracts\Http\Kernel']
-                    ->pushMiddleware(\AppUser\User\Middleware\GuestMiddleware::class);*/
+        // RESPONSE - routes.php sa mi nechcelo zaregistrovať, preto to radšej includnem.
     }
 
 
@@ -53,10 +50,7 @@ class Plugin extends PluginBase
      */
     public function registerComponents() // REVIEW - Tu registruješ componenty ktoré nikde neexistujú, teda aspoň nie pod namespace 'AppUser\User\Components\Login'... každopádne nepotrebuješ componenty
     {
-        return [
-            'AppUser\User\Components\Login' => 'loginForm',
-            'AppUser\User\Components\Register' => 'registerForm'
-        ];
+        // RESPONSE - Nebol som istý, aké komponenty vlastne patria sem ale už som to doštudoval
     }
 
     /**
@@ -64,12 +58,7 @@ class Plugin extends PluginBase
      */
     public function registerPermissions() // REVIEW - Permissions nemusíš riešiť. Sú v OctoberCMS kebyže to developer potrebuje, ale zo skúsenosti ak už sa riešia permissions tak sa to robí custom
     {
-        return [
-            'appuser.user.manage_users' => [
-                'tab' => 'User',
-                'label' => 'Manage users'
-            ],
-        ];
+
     }
 
     /**

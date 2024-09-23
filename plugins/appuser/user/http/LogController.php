@@ -1,11 +1,11 @@
 <?php
 
-namespace AppUser\User\Controllers;
+namespace AppUser\User\Http;
 
 use Backend\Classes\Controller;
 use Illuminate\Http\Request;
-use AppUser\User\Models\Log;
-use AppUser\User\Models\User;
+use AppUser\User\Models\Logs;
+use AppUser\User\Models\Users;
 
 
 class LogController extends Controller
@@ -15,9 +15,9 @@ class LogController extends Controller
         $user = $request->user;
 
         if ($user->is_admin) {
-            $logs = Log::all();
+            $logs = Logs::all();
         } else {
-            $logs = Log::where('user_id', $user->id)->get();
+            $logs = Logs::where('user_id', $user->id)->get();
         }
         return response()->json($logs);
     }

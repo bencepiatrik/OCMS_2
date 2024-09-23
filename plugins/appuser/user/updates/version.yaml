@@ -1,3 +1,4 @@
 v1.0.1: First version of User
     - added tables
 # REVIEW - ako ti fungovali migrácie keď ich tu nemáš? :DD to si robil nejako inak? možno cez command?
+# RESPONSE - october:migrate mi nechce fungovať, skúsil som rôzne fixy, ale najjednoduchšie bolo pre mňa migrovat daný path priamo s artisanom

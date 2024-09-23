@@ -1,28 +1,47 @@
-title: 'Log List'
+# ===================================
+#  List Behavior Config
+# ===================================
 
-list:
-    noRecordsMessage: 'No logs found'
-    recordsPerPage: 20
+# Model List Column configuration
+list: $/appuser/user/models/logs/columns.yaml
 
-    columns:
-        user_id:
-            label: 'User ID'
-            searchable: true
-            sortable: true
+# Model Class name
+modelClass: AppUser\User\Models\Logs
 
-        action:
-            label: 'Action'
-            searchable: true
-            sortable: true
+# List Title
+title: Manage Logs
 
-        created_at:
-            label: 'Created At'
-            type: datetime
-            sortable: true
+# Link URL for each record
+recordUrl: appuser/user/logs/update/:id
 
-        updated_at:
-            label: 'Updated At'
-            type: datetime
-            sortable: true
+# Message to display if the list is empty
+noRecordsMessage: backend::lang.list.no_records
 
-modelClass: AppUser\User\Models\Log
+# Records to display per page
+recordsPerPage: 20
+
+# Display page numbers with pagination, disable to improve performance
+showPageNumbers: true
+
+# Displays the list column set up button
+showSetup: true
+
+# Displays the sorting link on each column
+showSorting: true
+
+# Default sorting column
+defaultSort:
+    column: id
+    direction: asc
+
+# Display checkboxes next to each record
+showCheckboxes: true
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: list_toolbar
+
+    # Search widget configuration
+    search:
+        prompt: backend::lang.list.search_prompt

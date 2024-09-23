@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admin_row'); // REVIEW - tu som si len všimol že ti nesedí dropIfExists, na dropnutie column je dropColumn, ale uprimne v down() môžeš vždy dropovať celý table
+        Schema::dropIfExists('appuser_users'); // REVIEW - tu som si len všimol že ti nesedí dropIfExists, na dropnutie column je dropColumn, ale uprimne v down() môžeš vždy dropovať celý table
     }
 };

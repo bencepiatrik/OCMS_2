@@ -2,12 +2,12 @@
 
 namespace AppUser\User\Services;
 
-use AppUser\User\Models\User;
+use AppUser\User\Models\Users;
 
 class AuthService
 {
     public static function getAuthenticatedUser($token)
     {
-        return User::where('token', $token)->first();
+        return Users::where('token', $token)->first();
     }
 }

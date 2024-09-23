@@ -1,37 +1,31 @@
-title: user form
-form:
-    fields:
-        username:
-            label: 'Username'
-            searchable: true
-            sortable: true
+# ===================================
+#  Form Behavior Config
+# ===================================
 
-        password:
-            label: 'Password'
-            type: password
-            span: right
+# Record name
+name: User
 
-        token:
-            label: 'Token'
-            type: text
-            readOnly: true
-            span: right
+# Model Form Field configuration
+form: $/appuser/user/models/user/fields.yaml
 
-        created_at:
-            label: 'Created At'
-            type: datetime
-            sortable: true
+# Model Class name
+modelClass: AppUser\User\Models\Users
 
-        updated_at:
-            label: 'Updated At'
-            type: datetime
-            sortable: true
+# Default redirect location
+defaultRedirect: appuser/user/users
 
-        is_admin:
-            label: 'Is Admin'
-            type: switch
-            sortable: true
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: appuser/user/users/update/:id
+    redirectClose: appuser/user/users
 
-    toolbarButtons: save
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: appuser/user/users
+    redirectClose: appuser/user/users
 
-modelClass: AppUser\User\Models\User
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

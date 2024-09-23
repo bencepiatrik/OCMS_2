@@ -1,39 +1,47 @@
-title: user list
-list:
-    title: 'Users List'
-    noRecordsMessage: 'No users found'
-    recordsPerPage: 20
+# ===================================
+#  List Behavior Config
+# ===================================
 
-    columns:
-        username:
-            label: 'Username'
-            searchable: true
-            sortable: true
+# Model List Column configuration
+list: $/appuser/user/models/user/columns.yaml
 
-        password:
-            label: 'Password'
-            type: password
-            span: right
+# Model Class name
+modelClass: AppUser\User\Models\Users
 
-        token:
-            label: 'Token'
-            type: text
-            readOnly: true
-            span: right
+# List Title
+title: Manage Users
 
-        created_at:
-            label: 'Created At'
-            type: datetime
-            sortable: true
+# Link URL for each record
+recordUrl: appuser/user/users/update/:id
 
-        updated_at:
-            label: 'Updated At'
-            type: datetime
-            sortable: true
+# Message to display if the list is empty
+noRecordsMessage: backend::lang.list.no_records
 
-        is_admin:
-            label: 'Is Admin'
-            type: switch
-            sortable: true
+# Records to display per page
+recordsPerPage: 20
 
-modelClass: AppUser\User\Models\User
+# Display page numbers with pagination, disable to improve performance
+showPageNumbers: true
+
+# Displays the list column set up button
+showSetup: true
+
+# Displays the sorting link on each column
+showSorting: true
+
+# Default sorting column
+defaultSort:
+    column: id
+    direction: asc
+
+# Display checkboxes next to each record
+showCheckboxes: true
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: list_toolbar
+
+    # Search widget configuration
+    search:
+        prompt: backend::lang.list.search_prompt
