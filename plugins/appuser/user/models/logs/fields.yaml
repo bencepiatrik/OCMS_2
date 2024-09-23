@@ -1,0 +1,24 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    user_id:
+        label: User ID
+        type: text
+        readOnly: true
+        span: left
+
+    action:
+        label: Action
+        type: text
+        readOnly: true
+        span: left
+
+    created_at:
+        label: Created At
+        span: left
+
+    updated_at:
+        label: Updated At
+        span: left

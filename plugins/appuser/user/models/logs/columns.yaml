@@ -1,0 +1,24 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    user_id:
+        label: User ID
+        searchable: true
+        sortable: true
+
+    action:
+        label: Action
+        searchable: true
+        sortable: true
+
+    created_at:
+        label: Created At
+        type: datetime
+        sortable: true
+
+    updated_at:
+        label: Updated At
+        type: datetime
+        sortable: true

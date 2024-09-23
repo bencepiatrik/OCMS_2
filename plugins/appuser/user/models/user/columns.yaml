@@ -1,0 +1,35 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        disabled: true
+
+    username:
+        label: Username
+        type: text
+        readOnly: true
+
+    password:
+        label: Password
+        type: text
+        readOnly: true
+
+    is_admin:
+        label: Is Admin
+        type: text
+        readOnly: true
+
+    created_at:
+        label: Created At
+        type: datetime
+        readOnly: true
+        span: left
+
+    updated_at:
+        label: Updated At
+        type: datetime
+        readOnly: true
+        span: right

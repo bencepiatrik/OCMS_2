@@ -4,11 +4,11 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Default Log Channel
+    | Default LogTochange Channel
     |--------------------------------------------------------------------------
     |
     | This option defines the default log channel that gets used when writing
-    | messages to the logs. The name specified in this option should match
+    | messages to the logs_old. The name specified in this option should match
     | one of the channels defined in the "channels" configuration array.
     |
     */
@@ -17,7 +17,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Log Channels
+    | LogTochange Channels
     |--------------------------------------------------------------------------
     |
     | Here you may configure the log channels for your application. Out of
@@ -40,13 +40,13 @@ return [
 
         'single' => [
             'driver' => 'single',
-            'path' => storage_path('logs/system.log'),
+            'path' => storage_path('logs_old/system.log'),
             'level' => 'debug'
         ],
 
         'daily' => [
             'driver' => 'daily',
-            'path' => storage_path('logs/system.log'),
+            'path' => storage_path('logs_old/system.log'),
             'level' => 'debug',
             'days' => 14
         ],
@@ -54,7 +54,7 @@ return [
         'slack' => [
             'driver' => 'slack',
             'url' => env('LOG_SLACK_WEBHOOK_URL'),
-            'username' => 'October CMS Log',
+            'username' => 'October CMS LogTochange',
             'emoji' => ':boom:',
             'level' => 'critical',
         ],

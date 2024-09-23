@@ -1,0 +1,20 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+
+    username:
+        label: Username
+        type: text
+
+    password:
+        label: Password
+        type: text
+
+    is_admin:
+        label: Is Admin
+        type: text
